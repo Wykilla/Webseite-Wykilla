@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Mesh } from 'three'
 import * as THREE from 'three'
@@ -11,6 +11,10 @@ export default function ProceduralScene() {
   const torusRef = useRef<Mesh>(null)
   const groupRef = useRef<THREE.Group>(null)
   const prefersReducedMotion = useReducedMotion()
+
+  const [hoveredSphere, setHoveredSphere] = useState(false)
+  const [hoveredTorus, setHoveredTorus] = useState(false)
+  const [hoveredIcosahedron, setHoveredIcosahedron] = useState(false)
 
   useFrame((state, delta) => {
     if (prefersReducedMotion) return
@@ -36,24 +40,37 @@ export default function ProceduralScene() {
   return (
     <group ref={groupRef}>
       {/* Central Sphere - Cyan glow */}
-      <mesh ref={sphereRef} position={[0, 0, 0]}>
+      <mesh
+        ref={sphereRef}
+        position={[0, 0, 0]}
+        scale={hoveredSphere ? 1.2 : 1}
+        onPointerOver={() => setHoveredSphere(true)}
+        onPointerOut={() => setHoveredSphere(false)}
+      >
         <sphereGeometry args={[1, 32, 32]} />
         <meshStandardMaterial
-          color="#4CC9F0"
-          emissive="#4CC9F0"
-          emissiveIntensity={0.5}
+          color={hoveredSphere ? '#FF3AC0' : '#4CC9F0'}
+          emissive={hoveredSphere ? '#FF3AC0' : '#4CC9F0'}
+          emissiveIntensity={hoveredSphere ? 0.8 : 0.5}
           metalness={0.8}
           roughness={0.2}
         />
       </mesh>
 
       {/* Orbiting Torus - Magenta */}
-      <mesh ref={torusRef} position={[2.5, 0, 0]} rotation={[Math.PI / 4, 0, Math.PI / 4]}>
+      <mesh
+        ref={torusRef}
+        position={[2.5, 0, 0]}
+        rotation={[Math.PI / 4, 0, Math.PI / 4]}
+        scale={hoveredTorus ? 1.2 : 1}
+        onPointerOver={() => setHoveredTorus(true)}
+        onPointerOut={() => setHoveredTorus(false)}
+      >
         <torusGeometry args={[0.8, 0.3, 16, 100]} />
         <meshStandardMaterial
-          color="#FF3AC0"
-          emissive="#FF3AC0"
-          emissiveIntensity={0.4}
+          color={hoveredTorus ? '#FFD580' : '#FF3AC0'}
+          emissive={hoveredTorus ? '#FFD580' : '#FF3AC0'}
+          emissiveIntensity={hoveredTorus ? 0.7 : 0.4}
           metalness={0.7}
           roughness={0.3}
         />
@@ -89,10 +106,15 @@ export default function ProceduralScene() {
       </mesh>
 
       {/* Icosahedron - Cyan */}
-      <mesh position={[0, 2, -3]}>
+      <mesh
+        position={[0, 2, -3]}
+        scale={hoveredIcosahedron ? 1.3 : 1}
+        onPointerOver={() => setHoveredIcosahedron(true)}
+        onPointerOut={() => setHoveredIcosahedron(false)}
+      >
         <icosahedronGeometry args={[0.6, 0]} />
         <meshStandardMaterial
-          color="#4CC9F0"
+          color={hoveredIcosahedron ? '#FF3AC0' : '#4CC9F0'}
           wireframe
         />
       </mesh>
