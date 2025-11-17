@@ -1,3 +1,5 @@
+import { ToolsSection } from '@/components/chapters/tools'
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -11,7 +13,7 @@ export default function Home() {
             Foundation Setup Complete
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            Epic 0 in progress...
+            Epic 0, 9, and 5 complete!
           </p>
         </div>
       </section>
@@ -28,9 +30,7 @@ export default function Home() {
         <p className="text-gray-400">3D World Chapter (Coming in Epic 4)</p>
       </section>
 
-      <section id="tools" className="h-screen flex items-center justify-center">
-        <p className="text-gray-400">Tools Chapter (Coming in Epic 5)</p>
-      </section>
+      <ToolsSection />
 
       <section id="lore" className="h-screen flex items-center justify-center bg-ink/50">
         <p className="text-gray-400">Lore Chapter (Coming in Epic 6)</p>
