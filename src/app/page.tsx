@@ -1,5 +1,6 @@
 import HeroSection from '@/components/chapters/intro/HeroSection'
 import LoreSection from '@/components/chapters/lore/LoreSection'
+import OutroSection from '@/components/chapters/outro/OutroSection'
 
 export default function Home() {
   return (
@@ -30,9 +31,8 @@ export default function Home() {
         <p className="text-gray-400">Merch/Community Chapter (Coming in Epic 7)</p>
       </section>
 
-      <section id="outro" className="h-screen flex items-center justify-center bg-ink/50">
-        <p className="text-gray-400">Outro Chapter (Coming in Epic 8)</p>
-      </section>
+      {/* Epic 8: Outro Chapter */}
+      <OutroSection />
     </main>
   )
 }
