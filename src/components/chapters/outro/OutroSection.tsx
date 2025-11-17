@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui'
+import NewsletterForm from './NewsletterForm'
 
 export default function OutroSection() {
   return (
@@ -31,6 +32,9 @@ export default function OutroSection() {
             Join Waitlist
           </Button>
         </div>
+
+        {/* Newsletter Form */}
+        <NewsletterForm />
       </div>
     </section>
   )
