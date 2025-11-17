@@ -2,10 +2,29 @@
 
 import { useState } from 'react'
 import { assets } from '@/config/assets'
-import type { AudioTrack } from '@/types/audio'
+import TrackCard from './TrackCard'
+import AudioPlayer from './AudioPlayer'
 
 export default function MusicSection() {
-  const [currentTrack, setCurrentTrack] = useState<AudioTrack | null>(null)
+  const [currentTrackIndex, setCurrentTrackIndex] = useState<number | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const tracks = assets.music.tracks
+
+  const handlePlayTrack = (index: number) => {
+    if (currentTrackIndex === index) {
+      setIsPlaying(!isPlaying)
+    } else {
+      setCurrentTrackIndex(index)
+      setIsPlaying(true)
+    }
+  }
+
+  const handleTrackEnded = () => {
+    const nextIndex = currentTrackIndex !== null ? (currentTrackIndex + 1) % tracks.length : 0
+    setCurrentTrackIndex(nextIndex)
+    setIsPlaying(true)
+  }
 
   return (
     <section
@@ -24,15 +43,25 @@ export default function MusicSection() {
           Each track tells a story.
         </p>
 
-        {/* Track grid will be added in Story 3.2 */}
+        {/* Track grid */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {/* TrackCard components */}
+          {tracks.map((track, index) => (
+            <TrackCard
+              key={track.id}
+              track={track}
+              isPlaying={currentTrackIndex === index && isPlaying}
+              onPlay={() => handlePlayTrack(index)}
+            />
+          ))}
         </div>
 
-        {/* Audio player will be added in Story 3.3 */}
-        {currentTrack && (
+        {/* Audio player */}
+        {currentTrackIndex !== null && (
           <div className="sticky bottom-8">
-            {/* AudioPlayer component */}
+            <AudioPlayer
+              track={tracks[currentTrackIndex]}
+              onEnded={handleTrackEnded}
+            />
           </div>
         )}
       </div>
