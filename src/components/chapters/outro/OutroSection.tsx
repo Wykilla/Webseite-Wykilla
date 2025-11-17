@@ -1,5 +1,7 @@
 'use client'
 
+import { Button } from '@/components/ui'
+
 export default function OutroSection() {
   return (
     <section
@@ -17,7 +19,18 @@ export default function OutroSection() {
           Join the WYKILLA universe and start your creative journey today.
         </p>
 
-        {/* CTA buttons will be added in Story 8.2 */}
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          <Button variant="primary" size="lg" glow>
+            Explore AI Tools
+          </Button>
+          <Button variant="secondary" size="lg">
+            Listen on Spotify
+          </Button>
+          <Button variant="ghost" size="lg">
+            Join Waitlist
+          </Button>
+        </div>
       </div>
     </section>
   )
