@@ -23,37 +23,44 @@ Diese 4 Agent-Briefings ermöglichen parallele Entwicklung der WYKILLA Website d
 
 ## 🚀 Wie verwenden?
 
-### Schritt-für-Schritt Anleitung:
+### ⚡ EINFACHE METHODE (EMPFOHLEN):
 
-**1. Öffne 4 neue Claude-Chat-Fenster** (separate Browser-Tabs oder Fenster)
+**1. Öffne 4 neue Claude-Chat-Fenster**
 
-**2. Kopiere die Briefings:**
+**2. Kopiere in jedes Fenster eine dieser kurzen Anweisungen:**
 
-#### Chat-Fenster 1:
-- Öffne `AGENT-1-BRIEFING.md`
-- Kopiere den **GESAMTEN Inhalt** (Strg+A, Strg+C)
-- Füge ihn in das neue Chat-Fenster ein (Strg+V)
-- Benenne den Chat: **"Agent 1"**
+#### Chat 1 (benenne: "Agent 1"):
+```
+Lies die Datei docs/agent-briefings/AGENT-1-BRIEFING.md und folge den Anweisungen darin.
+```
 
-#### Chat-Fenster 2:
-- Öffne `AGENT-2-BRIEFING.md`
-- Kopiere den **GESAMTEN Inhalt**
-- Füge ihn in das neue Chat-Fenster ein
-- Benenne den Chat: **"Agent 2"**
+#### Chat 2 (benenne: "Agent 2"):
+```
+Lies die Datei docs/agent-briefings/AGENT-2-BRIEFING.md und folge den Anweisungen darin.
+```
 
-#### Chat-Fenster 3:
-- Öffne `AGENT-3-BRIEFING.md`
-- Kopiere den **GESAMTEN Inhalt**
-- Füge ihn in das neue Chat-Fenster ein
-- Benenne den Chat: **"Agent 3"**
+#### Chat 3 (benenne: "Agent 3"):
+```
+Lies die Datei docs/agent-briefings/AGENT-3-BRIEFING.md und folge den Anweisungen darin.
+```
 
-#### Chat-Fenster 4:
-- Öffne `AGENT-4-BRIEFING.md`
-- Kopiere den **GESAMTEN Inhalt**
-- Füge ihn in das neue Chat-Fenster ein
-- Benenne den Chat: **"Agent 4"**
+#### Chat 4 (benenne: "Agent 4"):
+```
+Lies die Datei docs/agent-briefings/AGENT-4-BRIEFING.md und folge den Anweisungen darin.
+```
 
-**3. Jeder Agent startet automatisch** mit seiner Arbeit - KEINE weiteren Anweisungen nötig!
+**3. Fertig!** Jeder Agent liest sein Briefing und startet automatisch.
+
+---
+
+### 📄 Alternativ: Starter-Dateien verwenden
+
+Noch einfacher - kopiere den Inhalt dieser Mini-Dateien:
+
+- **Agent 1**: `docs/agent-briefings/START-AGENT-1.md`
+- **Agent 2**: `docs/agent-briefings/START-AGENT-2.md`
+- **Agent 3**: `docs/agent-briefings/START-AGENT-3.md`
+- **Agent 4**: `docs/agent-briefings/START-AGENT-4.md`
 
 ---
 
