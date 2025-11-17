@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui'
 import NewsletterForm from './NewsletterForm'
+import SocialLinks from './SocialLinks'
 
 export default function OutroSection() {
   return (
@@ -35,6 +36,9 @@ export default function OutroSection() {
 
         {/* Newsletter Form */}
         <NewsletterForm />
+
+        {/* Social Links */}
+        <SocialLinks />
       </div>
     </section>
   )
