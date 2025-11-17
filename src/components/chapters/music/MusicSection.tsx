@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { assets } from '@/config/assets'
+import { useGSAP } from '@/hooks'
 import TrackCard from './TrackCard'
 import AudioPlayer from './AudioPlayer'
 import StreamingLinks from './StreamingLinks'
@@ -9,6 +10,8 @@ import StreamingLinks from './StreamingLinks'
 export default function MusicSection() {
   const [currentTrackIndex, setCurrentTrackIndex] = useState<number | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const cardsRef = useRef<HTMLDivElement>(null)
+  const { gsap, ScrollTrigger } = useGSAP()
 
   const tracks = assets.music.tracks
 
@@ -26,6 +29,28 @@ export default function MusicSection() {
     setCurrentTrackIndex(nextIndex)
     setIsPlaying(true)
   }
+
+  // Scroll-triggered animation
+  useEffect(() => {
+    if (!cardsRef.current || !gsap || !ScrollTrigger) return
+
+    const cards = cardsRef.current.querySelectorAll('.track-card')
+
+    gsap.fromTo(
+      cards,
+      { opacity: 0, scale: 0.9 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: cardsRef.current,
+          start: 'top 70%',
+        },
+      }
+    )
+  }, [gsap, ScrollTrigger])
 
   return (
     <section
@@ -45,7 +70,7 @@ export default function MusicSection() {
         </p>
 
         {/* Track grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-6 mb-12">
           {tracks.map((track, index) => (
             <TrackCard
               key={track.id}
