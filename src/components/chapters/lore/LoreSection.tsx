@@ -1,20 +1,48 @@
 'use client'
 
+import { useRef, useEffect } from 'react'
+import { useGSAP } from '@/hooks/useGSAP'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { assets } from '@/config/assets'
 import { loreEntries } from '@/config/lore'
 import LoreCard from './LoreCard'
 
 export default function LoreSection() {
+  const bgRef = useRef<HTMLDivElement>(null)
+  const { gsap, ScrollTrigger } = useGSAP()
+  const prefersReducedMotion = useReducedMotion()
+
+  useEffect(() => {
+    if (prefersReducedMotion || !bgRef.current || !gsap || !ScrollTrigger) return
+
+    const animation = gsap.to(bgRef.current, {
+      y: '30%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: bgRef.current,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+    })
+
+    return () => {
+      animation.kill()
+    }
+  }, [gsap, ScrollTrigger, prefersReducedMotion])
+
   return (
-    <section
-      id="lore"
-      className="relative min-h-screen py-20"
-      style={{
-        backgroundImage: `url(${assets.lore.background})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
+    <section id="lore" className="relative min-h-screen py-20 overflow-hidden">
+      {/* Parallax background */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${assets.lore.background})`,
+          willChange: prefersReducedMotion ? undefined : 'transform',
+        }}
+      />
+
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-bordeaux/60" />
 
