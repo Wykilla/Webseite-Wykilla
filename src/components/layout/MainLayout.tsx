@@ -2,12 +2,13 @@
 
 import { ReactNode } from 'react'
 import ScrollContainer from './ScrollContainer'
+import Navigation from './Navigation'
 
 /**
  * MainLayout Component
  *
  * Primary layout wrapper for the WYKILLA website.
- * Includes smooth scrolling container and future navigation components.
+ * Includes smooth scrolling container and sticky navigation.
  */
 
 interface MainLayoutProps {
@@ -18,7 +19,8 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <ScrollContainer>
       <div className="relative min-h-screen bg-ink text-white overflow-hidden">
-        {/* Navigation will be added in Story 0.8 */}
+        {/* Sticky Navigation */}
+        <Navigation />
 
         {/* Main Content */}
         <main className="relative z-10">
