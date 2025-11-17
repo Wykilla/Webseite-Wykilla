@@ -1,7 +1,8 @@
 'use client'
 
-import { GlassmorphCard } from '@/components/ui'
 import { assets } from '@/config/assets'
+import { loreEntries } from '@/config/lore'
+import LoreCard from './LoreCard'
 
 export default function LoreSection() {
   return (
@@ -24,9 +25,16 @@ export default function LoreSection() {
           </span>
         </h2>
 
-        {/* Lore entries grid - will be populated in Story 6.2 */}
+        {/* Lore entries grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Lore cards will be added in Story 6.2 */}
+          {loreEntries.map((entry) => (
+            <LoreCard
+              key={entry.id}
+              title={entry.title}
+              text={entry.text}
+              image={entry.image}
+            />
+          ))}
         </div>
       </div>
     </section>
