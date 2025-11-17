@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { assets } from '@/config/assets'
 import TrackCard from './TrackCard'
 import AudioPlayer from './AudioPlayer'
+import StreamingLinks from './StreamingLinks'
 
 export default function MusicSection() {
   const [currentTrackIndex, setCurrentTrackIndex] = useState<number | null>(null)
@@ -54,6 +55,9 @@ export default function MusicSection() {
             />
           ))}
         </div>
+
+        {/* Streaming Links */}
+        <StreamingLinks />
 
         {/* Audio player */}
         {currentTrackIndex !== null && (
