@@ -1,4 +1,5 @@
 import MusicSection from '@/components/chapters/music/MusicSection'
+import MerchSection from '@/components/chapters/merch/MerchSection'
 
 export default function Home() {
   return (
@@ -36,9 +37,7 @@ export default function Home() {
         <p className="text-gray-400">Lore Chapter (Coming in Epic 6)</p>
       </section>
 
-      <section id="merch" className="h-screen flex items-center justify-center">
-        <p className="text-gray-400">Merch/Community Chapter (Coming in Epic 7)</p>
-      </section>
+      <MerchSection />
 
       <section id="outro" className="h-screen flex items-center justify-center bg-ink/50">
         <p className="text-gray-400">Outro Chapter (Coming in Epic 8)</p>
