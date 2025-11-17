@@ -2,6 +2,7 @@
 
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import ProceduralScene from './ProceduralScene'
 
 export default function WorldSection() {
   return (
@@ -24,7 +25,8 @@ export default function WorldSection() {
             minPolarAngle={Math.PI / 4}
           />
 
-          {/* 3D Scene will be added in Story 4.2 */}
+          {/* 3D Scene */}
+          <ProceduralScene />
         </Canvas>
       </div>
 
