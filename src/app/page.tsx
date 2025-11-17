@@ -1,3 +1,5 @@
+import MusicSection from '@/components/chapters/music/MusicSection'
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -20,9 +22,7 @@ export default function Home() {
         <p className="text-gray-400">Hub Chapter (Coming in Epic 2)</p>
       </section>
 
-      <section id="music" className="h-screen flex items-center justify-center">
-        <p className="text-gray-400">Music Chapter (Coming in Epic 3)</p>
-      </section>
+      <MusicSection />
 
       <section id="world" className="h-screen flex items-center justify-center bg-ink/50">
         <p className="text-gray-400">3D World Chapter (Coming in Epic 4)</p>
