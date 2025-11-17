@@ -5,6 +5,7 @@ import { assets } from '@/config/assets'
 import { chapters } from '@/config/chapters'
 import ChapterThumbnail from './ChapterThumbnail'
 import ExpectationBlocks from './ExpectationBlocks'
+import NavigationIndicators from './NavigationIndicators'
 import { useGSAP } from '@/hooks/useGSAP'
 
 export default function HubSection() {
@@ -78,6 +79,9 @@ export default function HubSection() {
           ))}
         </div>
       </div>
+
+      {/* Navigation indicators */}
+      <NavigationIndicators />
     </section>
   )
 }
