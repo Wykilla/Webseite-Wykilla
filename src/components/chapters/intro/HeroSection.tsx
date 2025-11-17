@@ -4,14 +4,17 @@ import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { assets } from '@/config/assets'
 import LogoAnimation from './LogoAnimation'
+import ParticleBackground from './ParticleBackground'
 
 export default function HeroSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
     <section id="intro" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background particles - will be implemented in Story 1.3 */}
-      <div className="absolute inset-0 z-0 bg-ink" />
+      {/* Background */}
+      <div className="absolute inset-0 z-0 bg-ink">
+        <ParticleBackground />
+      </div>
 
       {/* Content */}
       <motion.div
