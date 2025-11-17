@@ -3,6 +3,7 @@
 import { assets } from '@/config/assets'
 import ProductCard from './ProductCard'
 import CommunitySection from './CommunitySection'
+import Testimonials from './Testimonials'
 
 export default function MerchSection() {
   const products = assets.merch.products
@@ -28,6 +29,9 @@ export default function MerchSection() {
 
         {/* Community section */}
         <CommunitySection />
+
+        {/* Testimonials */}
+        <Testimonials />
       </div>
     </section>
   )
