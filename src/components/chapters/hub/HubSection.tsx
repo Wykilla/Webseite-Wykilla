@@ -1,10 +1,15 @@
 'use client'
 
+import { useRef, useEffect } from 'react'
 import { assets } from '@/config/assets'
 import { chapters } from '@/config/chapters'
 import ChapterThumbnail from './ChapterThumbnail'
+import { useGSAP } from '@/hooks/useGSAP'
 
 export default function HubSection() {
+  const gridRef = useRef<HTMLDivElement>(null)
+  const { gsap, ScrollTrigger } = useGSAP()
+
   // Filter relevant chapters (exclude intro and hub itself)
   const hubChapters = chapters.filter(
     (ch) => !['intro', 'hub'].includes(ch.id)
@@ -23,6 +28,28 @@ export default function HubSection() {
     return thumbnailMap[chapterId] || assets.hub.thumbMusic
   }
 
+  useEffect(() => {
+    if (!gridRef.current || !gsap || !ScrollTrigger) return
+
+    const thumbnails = gridRef.current.querySelectorAll('.chapter-thumbnail')
+
+    gsap.fromTo(
+      thumbnails,
+      { opacity: 0, scale: 0.8, y: 40 },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: gridRef.current,
+          start: 'top 70%',
+        },
+      }
+    )
+  }, [gsap, ScrollTrigger])
+
   return (
     <section
       id="hub"
@@ -36,13 +63,14 @@ export default function HubSection() {
         </h2>
 
         {/* Thumbnail grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {hubChapters.map((chapter) => (
-            <ChapterThumbnail
-              key={chapter.id}
-              chapter={chapter}
-              thumbnailSrc={getThumbnail(chapter.id)}
-            />
+            <div key={chapter.id} className="chapter-thumbnail">
+              <ChapterThumbnail
+                chapter={chapter}
+                thumbnailSrc={getThumbnail(chapter.id)}
+              />
+            </div>
           ))}
         </div>
       </div>
