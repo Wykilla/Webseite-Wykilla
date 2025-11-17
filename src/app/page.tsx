@@ -2,6 +2,7 @@ import HeroSection from '@/components/chapters/intro/HeroSection'
 import HubSection from '@/components/chapters/hub/HubSection'
 import MusicSection from '@/components/chapters/music/MusicSection'
 import WorldSection from '@/components/chapters/world/WorldSection'
+import { ToolsSection } from '@/components/chapters/tools'
 import LoreSection from '@/components/chapters/lore/LoreSection'
 import MerchSection from '@/components/chapters/merch/MerchSection'
 import OutroSection from '@/components/chapters/outro/OutroSection'
@@ -21,9 +22,8 @@ export default function Home() {
       {/* Epic 4: 3D World Chapter */}
       <WorldSection />
 
-      <section id="tools" className="h-screen flex items-center justify-center">
-        <p className="text-gray-400">Tools Chapter (Coming in Epic 5)</p>
-      </section>
+      {/* Epic 5: Tools Chapter */}
+      <ToolsSection />
 
       {/* Epic 6: Lore Chapter */}
       <LoreSection />
