@@ -1,6 +1,7 @@
 'use client'
 
 import { assets } from '@/config/assets'
+import ProductCard from './ProductCard'
 
 export default function MerchSection() {
   const products = assets.merch.products
@@ -20,9 +21,7 @@ export default function MerchSection() {
         {/* Product grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {products.map((product) => (
-            <div key={product.id}>
-              {/* ProductCard component - Story 7.2 */}
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
