@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import ProceduralScene from './ProceduralScene'
 import ParticleField from './ParticleField'
+import ScrollCamera from './ScrollCamera'
 
 export default function WorldSection() {
   return (
@@ -12,6 +13,7 @@ export default function WorldSection() {
         <Canvas>
           {/* Camera */}
           <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={75} />
+          <ScrollCamera />
 
           {/* Lighting */}
           <ambientLight intensity={0.3} />
