@@ -6,6 +6,7 @@ import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { assets } from '@/config/assets'
 import { loreEntries } from '@/config/lore'
 import LoreCard from './LoreCard'
+import Timeline from './Timeline'
 
 export default function LoreSection() {
   const bgRef = useRef<HTMLDivElement>(null)
@@ -64,6 +65,9 @@ export default function LoreSection() {
             />
           ))}
         </div>
+
+        {/* Timeline */}
+        <Timeline />
       </div>
     </section>
   )
