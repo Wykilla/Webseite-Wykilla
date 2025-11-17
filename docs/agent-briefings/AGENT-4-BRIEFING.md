@@ -1,3 +1,11 @@
+# 📋 KOPIERE DIESEN TEXT IN EIN NEUES CHAT-FENSTER
+
+**Chat-Name:** `Agent 4 - Epic 9, 5 (Backend, Tools)`
+
+Kopiere den **GESAMTEN Inhalt** dieser Datei in ein neues Claude-Chat-Fenster und benenne den Chat **"Agent 4"**.
+
+---
+
 # AGENT 4 BRIEFING - Epic 9, 5 (Backend/Auth/Payment, Tools)
 
 ## ⚠️ WICHTIG: KEINE FRAGEN STELLEN

@@ -23,20 +23,49 @@ Diese 4 Agent-Briefings ermöglichen parallele Entwicklung der WYKILLA Website d
 
 ## 🚀 Wie verwenden?
 
-### Option A: Sequenziell (empfohlen für Anfang)
-1. **Starte Agent 4 zuerst** (Backend-Grundlage)
-2. Nach Epic 9 (Backend) Completion: Starte Agents 1-3 parallel
-3. Epic 5 (Tools) kann parallel zu anderen laufen
+### Schritt-für-Schritt Anleitung:
 
-### Option B: Voll-parallel (schnellste Entwicklung)
-Öffne 4 separate Claude-Chat-Fenster und starte alle gleichzeitig:
+**1. Öffne 4 neue Claude-Chat-Fenster** (separate Browser-Tabs oder Fenster)
 
-1. **Chat 1**: Kopiere `AGENT-1-BRIEFING.md` komplett in den Chat
-2. **Chat 2**: Kopiere `AGENT-2-BRIEFING.md` komplett in den Chat
-3. **Chat 3**: Kopiere `AGENT-3-BRIEFING.md` komplett in den Chat
-4. **Chat 4**: Kopiere `AGENT-4-BRIEFING.md` komplett in den Chat
+**2. Kopiere die Briefings:**
 
-Jeder Agent arbeitet dann autonom an seinen Epics.
+#### Chat-Fenster 1:
+- Öffne `AGENT-1-BRIEFING.md`
+- Kopiere den **GESAMTEN Inhalt** (Strg+A, Strg+C)
+- Füge ihn in das neue Chat-Fenster ein (Strg+V)
+- Benenne den Chat: **"Agent 1"**
+
+#### Chat-Fenster 2:
+- Öffne `AGENT-2-BRIEFING.md`
+- Kopiere den **GESAMTEN Inhalt**
+- Füge ihn in das neue Chat-Fenster ein
+- Benenne den Chat: **"Agent 2"**
+
+#### Chat-Fenster 3:
+- Öffne `AGENT-3-BRIEFING.md`
+- Kopiere den **GESAMTEN Inhalt**
+- Füge ihn in das neue Chat-Fenster ein
+- Benenne den Chat: **"Agent 3"**
+
+#### Chat-Fenster 4:
+- Öffne `AGENT-4-BRIEFING.md`
+- Kopiere den **GESAMTEN Inhalt**
+- Füge ihn in das neue Chat-Fenster ein
+- Benenne den Chat: **"Agent 4"**
+
+**3. Jeder Agent startet automatisch** mit seiner Arbeit - KEINE weiteren Anweisungen nötig!
+
+---
+
+### Option A: Voll-parallel (schnellste Entwicklung)
+Starte alle 4 Agents gleichzeitig für maximale Geschwindigkeit.
+
+**Zeitersparnis: ~60%** (13-18 Wochen → 5-7 Wochen)
+
+### Option B: Sequenziell (empfohlen wenn Backend-Setup nötig)
+1. **Starte Agent 4 zuerst** (Epic 9: Backend-Setup mit Supabase/Stripe)
+2. Nach Epic 9 Completion: Starte Agents 1-3 parallel
+3. Agent 4 macht dann Epic 5 (Tools) parallel zu den anderen
 
 ---
 

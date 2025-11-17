@@ -1,3 +1,11 @@
+# 📋 KOPIERE DIESEN TEXT IN EIN NEUES CHAT-FENSTER
+
+**Chat-Name:** `Agent 1 - Epic 1, 6, 8 (Intro, Lore, Outro)`
+
+Kopiere den **GESAMTEN Inhalt** dieser Datei in ein neues Claude-Chat-Fenster und benenne den Chat **"Agent 1"**.
+
+---
+
 # AGENT 1 BRIEFING - Epic 1, 6, 8 (Intro/Hero, Lore, Outro)
 
 ## ⚠️ WICHTIG: KEINE FRAGEN STELLEN

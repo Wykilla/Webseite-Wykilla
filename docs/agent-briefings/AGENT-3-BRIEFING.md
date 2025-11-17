@@ -1,3 +1,11 @@
+# 📋 KOPIERE DIESEN TEXT IN EIN NEUES CHAT-FENSTER
+
+**Chat-Name:** `Agent 3 - Epic 4, 2 (3D World, Hub)`
+
+Kopiere den **GESAMTEN Inhalt** dieser Datei in ein neues Claude-Chat-Fenster und benenne den Chat **"Agent 3"**.
+
+---
+
 # AGENT 3 BRIEFING - Epic 4, 2 (3D World, Hub)
 
 ## ⚠️ WICHTIG: KEINE FRAGEN STELLEN

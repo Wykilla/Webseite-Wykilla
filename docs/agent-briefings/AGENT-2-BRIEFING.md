@@ -1,3 +1,11 @@
+# 📋 KOPIERE DIESEN TEXT IN EIN NEUES CHAT-FENSTER
+
+**Chat-Name:** `Agent 2 - Epic 3, 7 (Music, Merch)`
+
+Kopiere den **GESAMTEN Inhalt** dieser Datei in ein neues Claude-Chat-Fenster und benenne den Chat **"Agent 2"**.
+
+---
+
 # AGENT 2 BRIEFING - Epic 3, 7 (Music, Merch/Community)
 
 ## ⚠️ WICHTIG: KEINE FRAGEN STELLEN
