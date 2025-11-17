@@ -3,42 +3,51 @@
 import { Button } from '@/components/ui'
 import NewsletterForm from './NewsletterForm'
 import SocialLinks from './SocialLinks'
+import Footer from './Footer'
 
 export default function OutroSection() {
   return (
     <section
       id="outro"
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-between overflow-hidden py-12"
     >
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-t from-cyan/20 via-ink to-ink" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <h2 className="font-display text-5xl md:text-7xl font-bold mb-6">
-          Ready to Create?
-        </h2>
-        <p className="text-xl md:text-2xl text-white/80 mb-12">
-          Join the WYKILLA universe and start your creative journey today.
-        </p>
+      {/* Main content */}
+      <div className="relative z-10 flex-1 flex items-center">
+        <div className="max-w-4xl mx-auto px-6 text-center w-full">
+          <h2 className="font-display text-5xl md:text-7xl font-bold mb-6">
+            Ready to Create?
+          </h2>
+          <p className="text-xl md:text-2xl text-white/80 mb-12">
+            Join the WYKILLA universe and start your creative journey today.
+          </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Button variant="primary" size="lg" glow>
-            Explore AI Tools
-          </Button>
-          <Button variant="secondary" size="lg">
-            Listen on Spotify
-          </Button>
-          <Button variant="ghost" size="lg">
-            Join Waitlist
-          </Button>
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button variant="primary" size="lg" glow>
+              Explore AI Tools
+            </Button>
+            <Button variant="secondary" size="lg">
+              Listen on Spotify
+            </Button>
+            <Button variant="ghost" size="lg">
+              Join Waitlist
+            </Button>
+          </div>
+
+          {/* Newsletter Form */}
+          <NewsletterForm />
+
+          {/* Social Links */}
+          <SocialLinks />
         </div>
+      </div>
 
-        {/* Newsletter Form */}
-        <NewsletterForm />
-
-        {/* Social Links */}
-        <SocialLinks />
+      {/* Footer */}
+      <div className="relative z-10">
+        <Footer />
       </div>
     </section>
   )
