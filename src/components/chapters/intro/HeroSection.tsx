@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
-import Image from 'next/image'
 import { assets } from '@/config/assets'
+import LogoAnimation from './LogoAnimation'
 
 export default function HeroSection() {
   const prefersReducedMotion = useReducedMotion()
@@ -24,13 +24,12 @@ export default function HeroSection() {
         className="relative z-10 text-center"
       >
         {/* Logo */}
-        <Image
+        <LogoAnimation
           src={assets.hero.logo}
           alt="WYKILLA"
           width={200}
           height={200}
-          className="mx-auto mb-8 glow-cyan"
-          priority
+          className="mx-auto mb-8"
         />
 
         {/* Title */}
