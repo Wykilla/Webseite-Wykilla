@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
     if (tool) {
       // Check limits for specific tool
       const toolType = z.enum(['lyric_generator', 'audio_fx']).parse(tool)
-      const limits = await checkUsageLimits(session.user.id, toolType)
+      const limits = await checkUsageLimits(session.user.id!, toolType)
 
       return NextResponse.json({
         tool: toolType,
@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
       })
     } else {
       // Get all usage stats
-      const usage = await getMonthlyUsage(session.user.id)
+      const usage = await getMonthlyUsage(session.user.id!)
 
       return NextResponse.json({
         lyricGenerator: usage.lyricGenerator,

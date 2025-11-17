@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
     // Track usage
     await trackUsage(
-      session.user.id,
+      session.user.id!,
       validated.tool,
       validated.tokensUsed,
       validated.costUsd,

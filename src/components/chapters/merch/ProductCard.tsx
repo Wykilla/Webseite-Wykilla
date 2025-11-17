@@ -8,7 +8,7 @@ interface ProductCardProps {
     id: string
     name: string
     image: string
-    price: number
+    price: string
     isPlaceholder: boolean
   }
 }

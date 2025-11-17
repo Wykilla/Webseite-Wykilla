@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Check usage limits
-    const limits = await checkUsageLimits(session.user.id, 'lyric_generator')
+    const limits = await checkUsageLimits(session.user.id!, 'lyric_generator')
     if (!limits.allowed) {
       throw new UsageLimitError('Usage limit reached. Please upgrade your plan.')
     }
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     const { emotion, theme, keywords }: LyricGeneratorRequest = await req.json()
 
     logger.info('Generating lyrics', {
-      userId: session.user.id,
+      userId: session.user.id!,
       emotion,
       theme,
       keywordCount: keywords?.length || 0,
@@ -54,7 +54,7 @@ Format: 2 verses and 1 chorus. Be creative and poetic.`
 
     // 5. Track usage
     await trackUsage(
-      session.user.id,
+      session.user.id!,
       'lyric_generator',
       tokensUsed,
       0.002 * tokensUsed, // Approx cost: $0.002 per token
@@ -62,7 +62,7 @@ Format: 2 verses and 1 chorus. Be creative and poetic.`
     )
 
     logger.info('Lyrics generated successfully', {
-      userId: session.user.id,
+      userId: session.user.id!,
       tokensUsed,
       remaining: limits.remaining - 1,
     })

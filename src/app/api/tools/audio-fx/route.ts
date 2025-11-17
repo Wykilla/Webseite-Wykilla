@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Check usage limits
-    const limits = await checkUsageLimits(session.user.id, 'audio_fx')
+    const limits = await checkUsageLimits(session.user.id!, 'audio_fx')
     if (!limits.allowed) {
       throw new UsageLimitError('Usage limit reached. Please upgrade your plan.')
     }
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     }
 
     logger.info('Generating audio FX', {
-      userId: session.user.id,
+      userId: session.user.id!,
       description: description.substring(0, 100),
     })
 
@@ -64,7 +64,7 @@ Be specific and technical, suitable for implementation in a DAW or synthesizer.`
 
     // 5. Track usage
     await trackUsage(
-      session.user.id,
+      session.user.id!,
       'audio_fx',
       tokensUsed,
       0.002 * tokensUsed, // Approx cost
@@ -72,7 +72,7 @@ Be specific and technical, suitable for implementation in a DAW or synthesizer.`
     )
 
     logger.info('Audio FX generated successfully', {
-      userId: session.user.id,
+      userId: session.user.id!,
       tokensUsed,
       remaining: limits.remaining - 1,
     })

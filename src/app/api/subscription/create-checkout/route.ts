@@ -20,12 +20,15 @@ export async function POST(req: NextRequest) {
     // Get or create Stripe customer
     let customer = await getStripeCustomer(session.user.email!)
     if (!customer) {
-      customer = await createStripeCustomer(session.user.email!, session.user.name)
+      customer = await createStripeCustomer(
+        session.user.email!,
+        session.user.name ?? undefined
+      )
     }
 
     // Create checkout session
     const checkoutSession = await stripe.checkout.sessions.create({
-      customer: customer.id,
+      customer: customer!.id,
       mode: 'subscription',
       payment_method_types: ['card'],
       line_items: [
@@ -37,7 +40,7 @@ export async function POST(req: NextRequest) {
       success_url: `${process.env.NEXTAUTH_URL}/dashboard?success=true`,
       cancel_url: `${process.env.NEXTAUTH_URL}/pricing?canceled=true`,
       metadata: {
-        userId: session.user.id,
+        userId: session.user.id!,
         planId: plan.id,
       },
     })

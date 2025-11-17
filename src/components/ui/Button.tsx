@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
  */
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'icon'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'icon' | 'outline'
   size?: 'sm' | 'md' | 'lg'
   glow?: boolean
   fullWidth?: boolean
@@ -37,6 +37,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         'bg-gradient-to-r from-cyan to-magenta text-white hover:opacity-90 focus:ring-cyan',
       secondary:
         'bg-ink border-2 border-cyan text-cyan hover:bg-cyan hover:text-ink focus:ring-cyan',
+      outline:
+        'bg-transparent border-2 border-gray-400 text-gray-300 hover:border-cyan hover:text-cyan focus:ring-cyan',
       ghost:
         'bg-transparent text-cyan hover:bg-cyan/10 focus:ring-cyan',
       icon: 'bg-transparent text-cyan hover:bg-cyan/10 focus:ring-cyan p-2',
