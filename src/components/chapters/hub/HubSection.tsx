@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react'
 import { assets } from '@/config/assets'
 import { chapters } from '@/config/chapters'
 import ChapterThumbnail from './ChapterThumbnail'
+import ExpectationBlocks from './ExpectationBlocks'
 import { useGSAP } from '@/hooks/useGSAP'
 
 export default function HubSection() {
@@ -61,6 +62,9 @@ export default function HubSection() {
             Explore
           </span>
         </h2>
+
+        {/* Expectation blocks */}
+        <ExpectationBlocks />
 
         {/* Thumbnail grid */}
         <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
