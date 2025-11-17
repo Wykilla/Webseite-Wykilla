@@ -3,6 +3,7 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import ProceduralScene from './ProceduralScene'
+import ParticleField from './ParticleField'
 
 export default function WorldSection() {
   return (
@@ -24,6 +25,9 @@ export default function WorldSection() {
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 4}
           />
+
+          {/* Particle Background */}
+          <ParticleField />
 
           {/* 3D Scene */}
           <ProceduralScene />
