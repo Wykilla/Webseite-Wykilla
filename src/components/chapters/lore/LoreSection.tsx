@@ -7,6 +7,7 @@ import { assets } from '@/config/assets'
 import { loreEntries } from '@/config/lore'
 import LoreCard from './LoreCard'
 import Timeline from './Timeline'
+import AmbientOverlay from './AmbientOverlay'
 
 export default function LoreSection() {
   const bgRef = useRef<HTMLDivElement>(null)
@@ -46,6 +47,9 @@ export default function LoreSection() {
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-bordeaux/60" />
+
+      {/* Ambient animation overlay */}
+      <AmbientOverlay />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <h2 className="font-display text-5xl md:text-7xl font-bold mb-12 text-center">
