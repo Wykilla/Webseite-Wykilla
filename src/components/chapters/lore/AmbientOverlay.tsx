@@ -1,21 +1,36 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 export default function AmbientOverlay() {
   const prefersReducedMotion = useReducedMotion()
+  const [particles, setParticles] = useState<Array<{
+    id: number
+    left: string
+    top: string
+    delay: string
+    duration: string
+    size: number
+  }>>([])
+
+  useEffect(() => {
+    // Generate particles only on client to avoid hydration mismatch
+    setParticles(
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 8}s`,
+        duration: `${15 + Math.random() * 15}s`,
+        size: Math.random() * 3 + 1, // 1-4px
+      }))
+    )
+  }, [])
 
   if (prefersReducedMotion) return null
 
-  // Generate floating light particles
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 8}s`,
-    duration: `${15 + Math.random() * 15}s`,
-    size: Math.random() * 3 + 1, // 1-4px
-  }))
+  if (particles.length === 0) return null
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">

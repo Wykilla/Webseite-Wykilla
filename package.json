@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start",
+    "build:static": "node scripts/prepare-static-export.js && NEXT_PUBLIC_STATIC_EXPORT=true next build && node scripts/prepare-static-export.js restore",
+    "start": "next start -p 3001",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
   },
