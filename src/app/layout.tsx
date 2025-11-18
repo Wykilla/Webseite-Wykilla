@@ -1,21 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import { MainLayout } from '@/components/layout'
 import { SessionProvider } from '@/components/providers/SessionProvider'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-  display: 'swap',
-})
+// Note: Google Fonts temporarily disabled due to build issues
+// Using system fonts as fallback
+// TODO: Re-enable when network connectivity is available or switch to self-hosted fonts
 
 export const metadata: Metadata = {
   title: 'WYKILLA — Futuristic Music & Creative AI Tools',
@@ -56,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="de" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="de">
       <body className="font-sans antialiased">
         <SessionProvider>
           <MainLayout>{children}</MainLayout>
