@@ -8,6 +8,7 @@ import { SessionProvider } from '@/components/providers/SessionProvider'
 // TODO: Re-enable when network connectivity is available or switch to self-hosted fonts
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3001'),
   title: 'WYKILLA — Futuristic Music & Creative AI Tools',
   description: 'Melodic Techno producer, 3D artist, and AI tool creator. Experience cinematic sound design and cutting-edge creative technology.',
   keywords: ['WYKILLA', 'Melodic Techno', 'Music Producer', 'AI Tools', '3D Art', 'Electronic Music'],

@@ -32,7 +32,19 @@ export default function ChapterThumbnail({
           src={thumbnailSrc}
           alt={chapter.name}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-110 transition-transform duration-500"
+          onError={(e) => {
+            // Fallback: Zeige Gradient-Hintergrund wenn Bild fehlt
+            e.currentTarget.style.display = 'none'
+          }}
+        />
+        {/* Fallback Gradient wenn Bild fehlt */}
+        <div 
+          className="absolute inset-0 bg-gradient-to-br opacity-50"
+          style={{
+            background: `linear-gradient(135deg, ${chapter.color}40, ${chapter.color}20)`,
+          }}
         />
 
         {/* Gradient overlay */}
