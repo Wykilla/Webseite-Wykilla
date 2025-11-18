@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="world-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4CC9F0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0A0F;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#world-gradient)"/>
+
+  <!-- 3D Cube Icon -->
+  <g transform="translate(300, 180)">
+    <polygon points="0,-40 60,0 0,40 -60,0" fill="#4CC9F0" opacity="0.3"/>
+    <polygon points="0,-40 60,0 60,80 0,40" fill="#4CC9F0" opacity="0.6"/>
+    <polygon points="0,-40 -60,0 -60,80 0,40" fill="#4CC9F0" opacity="0.4"/>
+    <circle cx="0" cy="0" r="80" stroke="#FF3AC0" stroke-width="2" fill="none" opacity="0.3"/>
+  </g>
+
+  <text x="300" y="330" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#4CC9F0">3D WORLD</text>
+</svg>
