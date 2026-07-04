@@ -1,0 +1,16 @@
+---
+description: AgentOS Linear-Dispatch — Pflicht bei Linear-Aufträgen (Webseite)
+alwaysApply: true
+---
+
+# AgentOS Linear-Dispatch (Pflicht)
+
+Bei Linear-Aufträgen oder „Check Linear for updates“:
+
+1. **Linear lesen:** `get_issue` + `list_comments` (neueste zuerst)
+2. **Dispatch erkennen:** neuesten `agent_dispatch`-Block; `to:` muss passen (Cursor → `cursor`, Codex → `codex`)
+3. **Gate/Scope:** `gate_required` ohne Freigabe → STOP; `scope.exclude` respektieren
+4. **Abschluss:** Completion Report als Linear-Kommentar (Schema §13)
+5. **Fallback:** Linear Write nicht verfügbar → paste-ready Kommentar im Chat
+
+**Kanonisch:** [wykilla-knowledge-base/ops/agentos/chief-of-staff-v1.md](https://github.com/Wykilla/wykilla-knowledge-base/blob/main/ops/agentos/chief-of-staff-v1.md) (ID: `OPS_AGENTOS_CHIEF_OF_STAFF_V1`)
