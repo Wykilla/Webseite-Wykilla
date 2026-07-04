@@ -2,6 +2,18 @@
 
 This file provides guidance and memory for Codex CLI.
 
+## AgentOS Linear-Dispatch (Pflicht)
+
+Bei Linear-Aufträgen oder „Check Linear for updates“:
+
+1. Linear lesen: `get_issue` + `list_comments` (neueste zuerst)
+2. Neuesten `agent_dispatch` finden; `to:` muss passen (Cursor → `cursor`, Codex → `codex`)
+3. `gate_required` und `scope.exclude` prüfen — bei Gate ohne Freigabe STOP
+4. Abschluss: Completion Report als Linear-Kommentar (Schema §13)
+5. Linear Write nicht verfügbar → paste-ready Kommentar im Chat
+
+**Kanonisch:** [wykilla-knowledge-base/ops/agentos/chief-of-staff-v1.md](https://github.com/Wykilla/wykilla-knowledge-base/blob/main/ops/agentos/chief-of-staff-v1.md) (ID: `OPS_AGENTOS_CHIEF_OF_STAFF_V1`)
+
 <!-- BEGIN: BMAD-AGENTS -->
 # BMAD-METHOD Agents and Tasks
 
