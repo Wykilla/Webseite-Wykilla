@@ -4,6 +4,8 @@ This file provides guidance and memory for Codex CLI.
 
 ## AgentOS Linear-Dispatch (Pflicht)
 
+> **Grundregel — nichts gilt ohne Linear.** Ein Plan, Zwischenstand oder Ergebnis, das nur in einem Chat, einem Handoff-File oder lokal im Repo lebt, gilt als **nicht übergeben** — die anderen Agenten arbeiten in anderen Ordnern und sehen es nicht. Linear ist der einzige geteilte Kanal. Vor jeder Übergabe und jedem Abschluss den Stand in Linear sichern (Kommentar; kein Linear-Write verfügbar → paste-ready im Chat → Fable synct). Issues anlegen/pflegen macht Fable.
+
 Bei Linear-Aufträgen oder „Check Linear for updates“:
 
 1. Linear lesen: `get_issue` + `list_comments` (neueste zuerst)
